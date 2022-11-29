@@ -12,7 +12,7 @@ export default function Header() {
             <nav className={style.nav}>
                 <p>Home</p>
                 <p>Wordlist</p>
-                <p>Flashcards</p>
+                <p>Let's train!</p>
             </nav>
         </header>
     )

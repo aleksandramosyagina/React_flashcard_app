@@ -1,13 +1,24 @@
 import style from './App.scss';
 import Header from './../Header/Header.jsx';
-import Home from './../Home/Home.jsx';
+import Wordlist from './../Wordlist/Wordlist.jsx';
+import words from './../../data/data.json';
+
 
 
 function App() {
   return (
     <div className={style.App}>
       <Header />
-      {/* <Home /> */}
+      {/* <Wordlist /> */}
+
+      {
+        words.map((word) => {
+          return <Wordlist key={word.id} word={word.english} translate={word.russian} transcription={word.transcription} tag={word.tags} />
+        }
+
+        )
+      }
+
     </div>
   );
 }
