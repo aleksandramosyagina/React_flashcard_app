@@ -1,0 +1,24 @@
+@import './../../style/vars.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $main-color;
+    height: 80px;
+    color: $title-color;
+}
+
+.appname {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    color: $font-color;
+}
