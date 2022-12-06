@@ -1,0 +1,18 @@
+@mixin button_white ($width, $padding) {
+    width: $width;
+    padding: $padding;
+    border:#000000 1px solid;
+    border-radius: 15px;
+    font-size: 1em;
+    text-align: center;
+}
+
+@mixin button_turquoise ($width, $padding) {
+    width: $width;
+    padding: $padding;
+    background-color: #4dd1c1;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    text-align: center;
+}

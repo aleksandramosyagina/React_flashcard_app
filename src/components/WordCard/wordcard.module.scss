@@ -1,0 +1,39 @@
+@import './../../style/vars.scss';
+@import './../../style/mixin.scss';
+
+.wordcard {
+    display: flex;
+    justify-content: center;
+    background-size: 80%;
+}
+.card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    width: 25%;
+    min-height: 20rem;
+    background-color: #F4F3F3;
+    border-radius: 20px;
+    border: #eae9e9 1px solid;
+}
+.word {
+    margin-top: 30%;
+    font-size: 2em;
+    font-weight: 500;
+    color: #090909
+}
+.transcription {
+    color: #b1b0b0
+}
+.button_translate {
+    @include button_turquoise (50%, 7px);
+
+    margin-top: 30%;
+
+}
+
+.translation {
+    font-size: 1.5em;
+    margin-top: 31%;
+}

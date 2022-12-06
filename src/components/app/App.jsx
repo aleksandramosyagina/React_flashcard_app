@@ -2,6 +2,7 @@ import style from './App.scss';
 import Header from './../Header/Header.jsx';
 import Wordlist from './../Wordlist/Wordlist.jsx';
 import words from './../../data/data.json';
+import Wordcard from '../WordCard/WordCard.jsx';
 
 
 
@@ -18,6 +19,11 @@ function App() {
 
         )
       }
+      <Wordcard
+        word={'hedgehog'}
+        transcription={'[ˈhedʒ.hɒɡ]'}
+        translation={'ежик'}
+      />
 
     </div>
   );
