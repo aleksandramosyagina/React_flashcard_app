@@ -9,9 +9,9 @@ function TableRow({ row }) {
         setIsEditMode(!isEditMode);
     }
 
-    // const handleCancel = () => {
-    //     setIsEditMode(!isEditMode);
-    // }
+    const handleCancel = () => {
+        setIsEditMode(!isEditMode);
+    }
 
     const handleChangeField = (event) => {
         setEditedField(event.target.value);
@@ -35,8 +35,11 @@ function TableRow({ row }) {
                 {isEditMode ?
                     <>
                         <button>Сохранить</button>
-                        <button>Закрыть</button>
-                    </> : <button onClick={handleEdit}>Редактировать</button>
+                        <button onClick={handleCancel}>Отмена</button>
+                    </> :
+                    <> <button onClick={handleEdit}>Редактировать</button>
+                        <button>Удалить</button>
+                    </>
                 }
             </td>
         </>
