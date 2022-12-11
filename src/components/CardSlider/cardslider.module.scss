@@ -1,0 +1,20 @@
+
+.cardslider {
+    display: grid;
+    grid-template-areas: "button_prev card button_next";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;    
+    justify-content: center;
+}
+.button_prev {
+    grid-area: button_prev;
+    height: 1.5rem;
+    width: 3rem;
+    margin-left: 87%;
+}
+.button_next {
+    grid-area: button_next;
+    height: 1.5rem;
+    width: 3rem;
+}

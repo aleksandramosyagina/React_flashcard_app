@@ -2,32 +2,19 @@ import style from './App.scss';
 import Header from './../Header/Header.jsx';
 // import Wordlist from './../Wordlist/Wordlist.jsx';
 import words from './../../data/data.json';
-import Wordcard from '../WordCard/WordCard.jsx';
 import Table from '../Table/Table.jsx';
-
+import CardSlider from '../CardSlider/CardSlider.jsx';
 
 function App() {
   return (
     <div className={style.App}>
       <Header />
-      {/* <Wordlist /> */}
-
-      {/* {
-        words.map((word) => {
-          return <Wordlist key={word.id} word={word.english} translate={word.russian} transcription={word.transcription} tag={word.tags} />
-        }
-
-        )
-      } */}
 
       <Table
         rows={words}
       />
 
-      <Wordcard
-        word={'hedgehog'}
-        transcription={'[ˈhedʒ.hɒɡ]'}
-        translation={'ежик'}
+      <CardSlider
       />
     </div>
   );
