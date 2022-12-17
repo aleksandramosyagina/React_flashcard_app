@@ -1,23 +1,30 @@
-import style from './App.scss';
 import Header from './../Header/Header.jsx';
 // import Wordlist from './../Wordlist/Wordlist.jsx';
 import words from './../../data/data.json';
 import Table from '../Table/Table.jsx';
 import CardSlider from '../CardSlider/CardSlider.jsx';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className={style.App}>
+    <BrowserRouter>
+
+
       <Header />
+      <Routes>
+        <Route path="/" element={<Table
+          rows={words} />} />
+        <Route path="/WordList" element={<Table
+          rows={words} />} />
+        <Route path="/CardSlider" element={<CardSlider />} />
 
-      <Table
-        rows={words}
-      />
-
-      <CardSlider
-      />
-    </div>
-  );
+      </Routes >
+    </BrowserRouter >
+  )
 }
 
 export default App;
