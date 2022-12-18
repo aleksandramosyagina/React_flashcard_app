@@ -8,6 +8,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+import Error from '../404/404.jsx';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Route path="/WordList" element={<Table
           rows={words} />} />
         <Route path="/CardSlider" element={<CardSlider />} />
-
+        <Route path="*" element={< Error />} />
       </Routes >
     </BrowserRouter >
   )
