@@ -7,15 +7,21 @@ function CardSlider() {
     const [count, setCount] = useState(1);
     const [word, setWord] = useState(words[count]);
     const [pressed, setPressed] = useState(false);
-    const [index, setIndex] = useState(0);
-    console.log(index);
+
+
+    const handleChange = () => {
+        setPressed(!pressed);
+    }
+
+
+    console.log();
     function handleClickPrev() {
         let val = count;
         val--;
         setCount(val);
         const arr = words[count];
         setWord(arr);
-        setIndex(index >= words.length - 1 ? 0 : index + 1);
+        setCount(count >= words.length - 1 ? 0 : count + 1);
 
         setPressed(false);
 
@@ -28,7 +34,7 @@ function CardSlider() {
         setWord(arr);
         console.log(`count ${count}`);
 
-        setIndex(index <= 0 ? words.length - 1 : index - 1);
+        setCount(count <= 0 ? words.length - 1 : count - 1);
         setPressed(false);
 
     }
@@ -40,7 +46,7 @@ function CardSlider() {
             <button className={style.button_prev} onClick={handleClickPrev}>prev</button>
             <Wordcard className={style.card}
                 word={word}
-                setPressed={setPressed}
+                handleChange={handleChange}
                 pressed={pressed}
             />
             <button className={style.button_next} onClick={handleClickNext}>next</button>
