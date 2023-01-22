@@ -37,7 +37,9 @@ function TableRow({ row }) {
                         <button>Сохранить</button>
                         <button onClick={handleCancel}>Отмена</button>
                     </> :
-                    <> <button onClick={handleEdit}>Редактировать</button>
+                    <> <button className='edit-btn' onClick={handleEdit}>Редактировать
+                        {/* <img src='assets/img/edit.png' alt='edit icon'></img> */}
+                    </button>
                         <button>Удалить</button>
                     </>
                 }
