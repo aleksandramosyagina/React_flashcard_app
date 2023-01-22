@@ -7,6 +7,31 @@ function CardSlider() {
     const [count, setCount] = useState(1);
     const [word, setWord] = useState(words[count]);
     const [pressed, setPressed] = useState(false);
+    const [learntWordsIds, setLearntWordsIds] = useState([]);
+    const [wordsNumber, setWordsNumber] = useState(0);
+    const [learntAll, setLearntAll] = useState(false);
+
+
+    const handleCount = (id) => {
+        const idsArr = [...learntWordsIds];
+        idsArr.push(id);
+        let result = [];
+
+
+        idsArr.forEach((el) => {
+            if (!result.includes(el)) {
+                result.push(el);
+            }
+        })
+
+        setLearntWordsIds(result);
+        setWordsNumber(result.length)
+
+        if (result.length === words.length) {
+            setLearntAll(true)
+        }
+    }
+
 
 
     const handleChange = () => {
@@ -23,7 +48,10 @@ function CardSlider() {
         setWord(arr);
         setCount(count >= words.length - 1 ? 0 : count + 1);
 
+        handleCount(words[count].id);
         setPressed(false);
+
+
 
     }
     function handleClickNext() {
@@ -35,6 +63,7 @@ function CardSlider() {
         console.log(`count ${count}`);
 
         setCount(count <= 0 ? words.length - 1 : count - 1);
+        handleCount(words[count].id);
         setPressed(false);
 
     }
@@ -51,7 +80,10 @@ function CardSlider() {
             />
             <button className={style.button_next} onClick={handleClickNext}>next</button>
 
-
+            {learntAll
+                ? <div className={style.counter}>Keep it up! You've learnt all the words!</div>
+                : <div className={style.counter}>Words learnt: {wordsNumber} out of {words.length} today! </div>
+            }
         </div>
     )
 
